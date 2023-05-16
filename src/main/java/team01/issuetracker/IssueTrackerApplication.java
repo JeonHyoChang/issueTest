@@ -10,5 +10,5 @@ public class IssueTrackerApplication {
 		SpringApplication.run(IssueTrackerApplication.class, args);
 	}
 
-	
+
 }
