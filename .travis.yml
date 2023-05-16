@@ -34,18 +34,21 @@ deploy:
     wait-until-deployed: true
     on: # S3 전송을 위한 명령어
       all_branches: true
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
 
     bucket: manju-issue-test
     key: test.zip
-
     bundle_type: zip # 압축 확장자
+
     application: webservice-test
     deployment_group: webservice-group
     region: ap-northeast-2
     wait-until-deployed: true
+    on: # S3 전송을 위한 명령어
+      all_branches: true
 
 # CI 실행 완료시 메일로 알람
 notifications:
