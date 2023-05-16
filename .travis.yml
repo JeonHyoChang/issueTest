@@ -14,6 +14,9 @@ cache:
 
 script: "./gradlew clean build"
 
+before_install:
+  - chmod +x gradlew
+
 before_deploy:
   - zip -r test *
   - mkdir -p deploy
@@ -23,7 +26,6 @@ deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
-
     bucket: manju-issue-test # S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
@@ -31,7 +33,7 @@ deploy:
     local_dir: deploy # before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
 
-# CI 실행 완료 시 메일로 알람
+# CI 실행 완료시 메일로 알람
 notifications:
   email:
     recipients:
