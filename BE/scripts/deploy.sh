@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPOSITORY=/home/ec2-user/app/step2
+REPOSITORY=/home/ubuntu/app/step2
 PROJECT_NAME=webservice
 
 echo "> Build 파일복사"
