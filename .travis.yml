@@ -44,7 +44,7 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
 
     bucket: manju-issue-test
-    key: test.zip
+    key: webservice.zip
     bundle_type: zip # 압축 확장자
 
     application: webservice-test
